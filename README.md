@@ -3,10 +3,14 @@ Mejoras
 
 - Ampliado el numero de miembros de equipo usando mas entradas en el formato grid
 
-- boton para subir arriba en cualquier momento
+- Boton para subir arriba en cualquier momento
+
+- Cambiado el error en la página de casas que al tocar causó bajar demasiado y que no se mostraba parte del título y descripción
+
+
 
 Funciones
-- En cada página en la cabecera se ha añadido una función timeout con 3 mensajes que van rotando (una función con intervalos que se puede cancelar)
+- En cada página en la cabecera se ha añadido una función timeout con 3 mensajes que van rotando y al hacer clic se pausa (una función con intervalos que se puede cancelar)
 
 
 
@@ -17,4 +21,4 @@ Funciones
 - formulario - implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 
 
-- cambiado el error en la página de casas que al tocar causó bajar demasiado y que no se mostraba parte del título y descripción
+
