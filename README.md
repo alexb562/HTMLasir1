@@ -4,3 +4,5 @@ Mejoras que hemos hecho hasta ahora
 - sobre el boton de idiomas - ahora interactivo usando indices para cambiar el idioma de la pagina
 - formulario - implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 - en cada pagina en la cabecera se ha anadido una funcion timeout con 3 mensajes que van rotando
+- boton para subir arriba en cualquier momento
+- cambiado el error en la página de casas que al tocar causó bajar demasiado y que no se mostraba parte del título y descripción
