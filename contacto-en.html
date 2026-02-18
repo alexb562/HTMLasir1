@@ -34,43 +34,43 @@
                 <p>Phone: <span class="telefono">+34 916508937</span></p>
             </div>
             <div class="right">
-                <form class="formulario-ampliado">
+                <form id="formulario-contacto" class="formulario-ampliado" novalidate>
                     <fieldset>
                         <legend>Personal Data</legend>
                         <div class="row">
-                            <div class="field"><label>Name and surname *</label><input type="text" required></div>
-                            <div class="field"><label>Email *</label><input type="email" required></div>
+                            <div class="field"><label>Name and surname *</label><input type="text" id="nombre" placeholder="Ex: John Doe"></div>
+                            <div class="field"><label>Email *</label><input type="email" id="email" placeholder="example@mail.com"></div>
+                        </div>
+                        <div class="row">
+                            <div class="field"><label>Phone *</label><input type="text" id="telefono" placeholder="Ex: 600123456"></div>
+                            <div class="field">
+                                <label>Location of interest *</label>
+                                <select name="poblacion" id="poblacion">
+                                    <option value="">-- Choose an option --</option>
+                                    <optgroup label="Center"><option value="madrid">Madrid</option><option value="toledo">Toledo</option></optgroup>
+                                    <optgroup label="North"><option value="guadalajara">Guadalajara</option><option value="avila">Ávila</option></optgroup>
+                                </select>
+                            </div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Operation Details</legend>
-                        <label>Type of Operation:</label>
-                        <div class="opciones-radio">
+                        <label>Type of Operation: *</label>
+                        <div class="opciones-radio" id="grupo-operacion">
                             <input type="radio" id="comprar" name="operacion" value="comprar"><label for="comprar">Buy</label>
                             <input type="radio" id="vender" name="operacion" value="vender"><label for="vender">Sell</label>
                             <input type="radio" id="alquilar" name="operacion" value="alquilar"><label for="alquilar">Rent</label>
                         </div><br>
-                        <label>Message:</label>
-                        <textarea rows="5" placeholder="Write your message here..."></textarea>
+                        <label>Message: *</label>
+                        <textarea id="mensaje" rows="5" placeholder="Write your message here (min 10 characters)..."></textarea>
                     </fieldset>
-                    <div class="checkbox"><input type="checkbox" required id="privacidad"><label for="privacidad">I accept the privacy policy</label></div>
+                    <div class="checkbox"><input type="checkbox" id="privacidad"><label for="privacidad">I accept the privacy policy *</label></div>
                     <button type="submit">SEND REQUEST</button>
                 </form>
             </div>
         </section>
     </main>
     <footer class="pie-pagina"><p>© 2026 Europa Inmobiliaria. All rights reserved.</p></footer>
-    <script>
-        document.getElementById("botonidiomas").addEventListener("change", function() {
-            let idiomaElegido = this.value;
-            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
-            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
-            if (idiomaElegido === "es") {
-                window.location.href = paginaBase; 
-            } else {
-                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

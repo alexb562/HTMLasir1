@@ -619,3 +619,24 @@ button[type="submit"]:hover {
         box-sizing: border-box;
     }
 }
+
+.input-error {
+    border: 2px solid #e74c3c !important;
+    background-color: #fdf2f1;
+}
+
+.mensaje-error, .mensaje-error-radio, .mensaje-error-check {
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+.mensaje-error-radio {
+    margin-bottom: 15px;
+}
+
+.mensaje-error-check {
+    margin-left: 10px;
+}

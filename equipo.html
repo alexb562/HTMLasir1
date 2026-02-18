@@ -53,18 +53,6 @@
         </section>
     </main>
     <footer class="pie-pagina"><p>© 2026 Europa Inmobiliaria. Todos los derechos reservados.</p></footer>
-    <script>
-        document.getElementById("botonidiomas").addEventListener("change", function() {
-            let idiomaElegido = this.value;
-            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
-            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
-
-            if (idiomaElegido === "es") {
-                window.location.href = paginaBase; 
-            } else {
-                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
