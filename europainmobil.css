@@ -621,8 +621,7 @@ button[type="submit"]:hover {
 #btn-subir {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20px;
     background-color: #a7b2f1;
     width: 45px;
     height: 45px;
