@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Kontakt | Europa Inmobiliaria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="europainmobil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body id="inicio">
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <img id="logo" src="logo.png" alt="Logo"/>
+            <p id="slogan">Erleben Sie den europäischen Stil!</p>
+            <nav class="menu-principal">
+                <a href="index-de.html">Startseite</a>
+                <a href="propiedades-de.html">Immobilien</a>
+                <a href="equipo-de.html">Team</a>
+                <a href="contacto-de.html">Kontakt</a>
+            </nav>
+            <select id="botonidiomas">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="de" selected>Deutsch</option>
+            </select>
+        </div>
+    </header>
+    <main class="contenido-principal">
+        <section class="container seccion">
+            <div class="left">
+                <h2>Nehmen Sie Kontakt mit uns auf</h2>
+                <p>Gewerbepark Miniparc I C/ Azalea, 1<br>Soto de la Moraleja 28109 Alcobendas</p>
+                <div class="mapa-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.232809092916!2d-3.6373597234020316!3d40.52569465347495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422fc8ab52aadb%3A0x42bb9f2db7f6d1aa!2sC.%20de%20la%20Azalea%2C%201%2C%2028109%20Alcobendas%2C%20Madrid!5e0!3m2!1es!2ses!4v1700000000000" width="100%" height="250" style="border:0" loading="lazy"></iframe></div>
+                <p>Telefon: <span class="telefono">+34 916508937</span></p>
+            </div>
+            <div class="right">
+                <form class="formulario-ampliado">
+                    <fieldset>
+                        <legend>Persönliche Daten</legend>
+                        <div class="row">
+                            <div class="field"><label>Vor- und Nachname *</label><input type="text" required></div>
+                            <div class="field"><label>E-Mail *</label><input type="email" required></div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Operationsdetails</legend>
+                        <label>Art der Operation:</label>
+                        <div class="opciones-radio">
+                            <input type="radio" id="comprar" name="operacion" value="comprar"><label for="comprar">Kaufen</label>
+                            <input type="radio" id="vender" name="operacion" value="vender"><label for="vender">Verkaufen</label>
+                            <input type="radio" id="alquilar" name="operacion" value="alquilar"><label for="alquilar">Mieten</label>
+                        </div><br>
+                        <label>Nachricht:</label>
+                        <textarea rows="5" placeholder="Schreiben Sie hier Ihre Nachricht..."></textarea>
+                    </fieldset>
+                    <div class="checkbox"><input type="checkbox" required id="privacidad"><label for="privacidad">Ich akzeptiere die Datenschutzrichtlinie</label></div>
+                    <button type="submit">ANFRAGE SENDEN</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="pie-pagina"><p>© 2026 Europa Inmobiliaria. Alle Rechte vorbehalten.</p></footer>
+    <script>
+        document.getElementById("botonidiomas").addEventListener("change", function() {
+            let idiomaElegido = this.value;
+            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
+            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
+            if (idiomaElegido === "es") {
+                window.location.href = paginaBase; 
+            } else {
+                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
+            }
+        });
+    </script>
+</body>
+</html>
