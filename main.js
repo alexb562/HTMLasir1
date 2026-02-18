@@ -1,12 +1,15 @@
-function openInNewWindow(url, width, height) {
-    const left = (screen.width - width) / 2;
-    const top = (screen.height - height) / 2;
-    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+function showPrompt(documentName) {
+    const response = prompt(`¿Vas a ver el documento "${documentName}"? Introduce "si" para verlo o "no" para salir.`);
+
+    if (response && response.toLowerCase() === "si") {
+        window.open(`${documentName.toLowerCase().replace(' ', '-')}.pdf`, '_blank');
+    } else if (response && response.toLowerCase() === "no") {
+        alert("Has decidido no ver el documento.");
+    } else {
+        alert("Por favor, introduce 'si' o 'no'.");
+    }
 }
-//funcion para abrir ventanas diferentes al hacer clic 
-
-
-
+//la funcion mouseover
 
 document.addEventListener("DOMContentLoaded", () => {
 
