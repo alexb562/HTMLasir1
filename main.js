@@ -1,4 +1,15 @@
+function openInNewWindow(url, width, height) {
+    const left = (screen.width - width) / 2;
+    const top = (screen.height - height) / 2;
+    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+}
+//funcion para abrir ventanas diferentes al hacer clic 
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
+
     
     const idiomaActual = document.documentElement.lang || "es";
 
