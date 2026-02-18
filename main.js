@@ -21,7 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
+    const enlacesGaleria = document.querySelectorAll('.miniaturas a');
+    
+    if (enlacesGaleria.length > 0) {
+        enlacesGaleria.forEach(enlace => {
+            enlace.addEventListener('click', function(e) {
+                // MAGIA: preventDefault() detiene el salto molesto hacia abajo
+                e.preventDefault(); 
+                
+                // 1. Ocultamos todas las imágenes y todos los textos
+                const todasLasImagenes = document.querySelectorAll('.imagen-grande');
+                const todosLosTextos = document.querySelectorAll('.cuadro-texto');
+                
+                todasLasImagenes.forEach(img => img.style.display = 'none');
+                todosLosTextos.forEach(txt => txt.style.display = 'none');
+                
+                // 2. Averiguamos en qué miniatura se ha hecho clic (ej: "#img3")
+                const idDestino = this.getAttribute('href'); 
+                
+                // 3. Seleccionamos la imagen y el texto correctos
+                const imagenAMostrar = document.querySelector(idDestino);
+                const numeroTexto = idDestino.replace('#img', ''); // Extrae solo el número (ej: '3')
+                const textoAMostrar = document.getElementById('texto' + numeroTexto);
+                
+                // 4. Los mostramos en pantalla sin mover el scroll
+                if (imagenAMostrar) imagenAMostrar.style.display = 'block';
+                if (textoAMostrar) textoAMostrar.style.display = 'block';
+            });
+        });
+    }
     setTimeout(() => {
         if (!sessionStorage.getItem("bienvenida")) {
             let mensaje = "¡Bienvenido a Europa Inmobiliaria! Estamos aquí para ayudarte a encontrar tu hogar.";

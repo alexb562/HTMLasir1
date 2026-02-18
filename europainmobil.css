@@ -596,7 +596,17 @@ button[type="submit"]:hover {
         box-sizing: border-box;
     }
 }
+.contenedor-principal > div {
+    scroll-margin-top: 250px; 
+}
+html {
+    scroll-behavior: smooth;
+}
 
+.imagen-grande {
+    
+    scroll-margin-top: 450px !important; 
+}
 .input-error {
     border: 2px solid #e74c3c !important;
     background-color: #fdf2f1;
