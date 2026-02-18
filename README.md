@@ -14,11 +14,13 @@ Funciones
 
 
 
+Formulario
+- Implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 
 
 
 - sobre el boton de idiomas - ahora interactivo usando indices para cambiar el idioma de la pagina
-- formulario - implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
+
 
 
 
