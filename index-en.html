@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | Europa Inmobiliaria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="europainmobil.css">
+</head>
+<body id="inicio">
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <img id="logo" src="logo.png" alt="Logo"/>
+            <p id="slogan">Live the European style!</p>
+            <nav class="menu-principal">
+                <a href="index-en.html">Home</a>
+                <a href="propiedades-en.html">Properties</a>
+                <a href="equipo-en.html">Team</a>
+                <a href="contacto-en.html">Contact</a>
+            </nav>
+            <select id="botonidiomas">
+                <option value="es">Español</option>
+                <option value="en" selected>English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+    </header>
+    <a href="contacto-en.html" id="botonsaltaid">Contact Us Now</a>
+    <a href="#inicio" id="btn-subir"><i class="fa-solid fa-arrow-up"></i></a>
+    <main class="contenido-principal">
+        <section class="sobre-nosotros-wrapper seccion">
+            <p class="subtitulo-principal">More than a real estate agency, we are architects of new beginnings.</p>
+            <div class="intro-content">
+                <p>Founded with the conviction that buying or selling a property is one of the most important milestones in a person's life, our agency was born to redefine the real estate experience.</p>
+                <p>With years of combined experience in the sector, we merge traditional market knowledge with the latest digital technologies to offer an agile, transparent, and personalized service.</p>
+            </div>
+        </section>
+        <hr class="separador-seccion">
+        <section class="seccion">
+            <h2 class="titulo-centrado">Why choose us</h2>
+            <ul class="why-us-list">
+                <li><h3>Radical Transparency</h3><p>We believe in absolute clarity. No fine print or surprises.</p></li>
+                <li><h3>Digital Innovation</h3><p>We use 3D virtual tours and big data for precise valuations.</p></li>
+                <li><h3>24/7 Commitment</h3><p>We know that opportunities have no schedule. Our team is dedicated to you.</p></li>
+                <li><h3>Real Empathy</h3><p>We don't sell houses, we understand homes.</p></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="pie-pagina"><p>© 2026 Europa Inmobiliaria. All rights reserved.</p></footer>
+    <script>
+        document.getElementById("botonidiomas").addEventListener("change", function() {
+            let idiomaElegido = this.value;
+            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
+            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
+
+            if (idiomaElegido === "es") {
+                window.location.href = paginaBase; 
+            } else {
+                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
+            }
+        });
+    </script>
+</body>
+</html>

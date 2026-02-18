@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Propiedades | Europa Inmobiliaria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="europainmobil.css">
+</head>
+<body id="inicio">
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <img id="logo" src="logo.png" alt="Logo"/>
+            <p id="slogan">¡Vive del estilo europeo!</p>
+            <nav class="menu-principal">
+                <a href="index.html">Inicio</a>
+                <a href="propiedades.html">Propiedades</a>
+                <a href="equipo.html">Equipo</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <select id="botonidiomas">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+    </header>
+    <main class="contenido-principal">
+        <section class="galbody seccion">
+            <h1 class="ofertasf">Nuestras ofertas más recientes</h1>
+            <div class="galeria">
+                <div class="miniaturas">
+                    <a href="#img1"><img src="img1.jpg" alt="1"></a>
+                    <a href="#img2"><img src="img2.jpg" alt="2"></a>
+                    <a href="#img3"><img src="img3.jpg" alt="3"></a>
+                    <a href="#img4"><img src="img4.jpg" alt="4"></a>
+                    <a href="#img5"><img src="img5.jpg" alt="5"></a>
+                </div>
+                <div class="contenedor-principal">
+                    <div class="imagen-grande" id="mostrar"><img src="img1.jpg" alt="1"></div>
+                    <div class="imagen-grande" id="img1"><img src="img1.jpg" alt="1"></div>
+                    <div class="imagen-grande" id="img2"><img src="img2.jpg" alt="2"></div>
+                    <div class="imagen-grande" id="img3"><img src="img3.jpg" alt="3"></div>
+                    <div class="imagen-grande" id="img4"><img src="img4.jpg" alt="4"></div>
+                    <div class="imagen-grande" id="img5"><img src="img5.jpg" alt="5"></div>
+                    <div class="cuadro-texto" id="texto-default">
+                        <h2>Casa Independiente | Calle del Camino Alto</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 10.900.000 € | 987 m² | 7 Hab</div>
+                        <p>Venta de chalet independiente en La Moraleja, reformado con primeras calidades...</p>
+                    </div>
+                    <div class="cuadro-texto" id="texto1">
+                        <h2>Casa Independiente | Calle del Camino Alto</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 10.900.000 € | 987 m² | 7 Hab</div>
+                        <p>Venta de chalet independiente en La Moraleja, reformado con primeras calidades...</p>
+                    </div>
+                    <div class="cuadro-texto" id="texto2">
+                        <h2>Casa Independiente | Camino Ancho</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 4.600.000 € | 800 m² | 5 Hab</div>
+                        <p>Chalet independiente en La Moraleja. Parcela espectacular con gran potencial para reforma integral.</p>
+                    </div>
+                    <div class="cuadro-texto" id="texto3">
+                        <h2>Casa Independiente | Aravaca</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 3.100.000 € | 746 m² | 6 Hab</div>
+                        <p>Moderno independiente en Aravaca. Imponente vivienda unifamiliar construida en hormigón blanco.</p>
+                    </div>
+                    <div class="cuadro-texto" id="texto4">
+                        <h2>Casa Independiente | Adelfas</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 4.500.000 € | 1.104 m² | 6 Hab</div>
+                        <p>Ubicada en Montepríncipe, Boadilla, cuenta con seguridad 24h. 1.103 m² construidos en 3 plantas.</p>
+                    </div>
+                    <div class="cuadro-texto" id="texto5">
+                        <h2>Casa Independiente | Retama</h2>
+                        <a href="#" class="boton-mapa">Ver Ubicación</a>
+                        <div>• 4.000.000 € | 1.075 m² | 5 Hab</div>
+                        <p>Ubicada en Monte de las Encinas (Boadilla), esta vivienda de diseño moderno se asienta en parcela de 2.000 m².</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="pie-pagina">
+        <p>© 2026 Europa Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.getElementById("botonidiomas").addEventListener("change", function() {
+            let idiomaElegido = this.value;
+            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
+            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
+
+            if (idiomaElegido === "es") {
+                window.location.href = paginaBase; 
+            } else {
+                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
+            }
+        });
+    </script>
+</body>
+</html>

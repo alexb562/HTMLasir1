@@ -1,250 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <title>Europa Inmobiliaria</title>
-
+    <title>Inicio | Europa Inmobiliaria</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    
     <link rel="stylesheet" href="europainmobil.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
 </head>
-
-
 <body id="inicio">
-
-
-
     <header class="cabecera">
         <div class="cabecera-contenido">
-
-            <img id="logo" src="logo.png" alt="Logo Europa Inmobiliaria"/>
-            
+            <img id="logo" src="logo.png" alt="Logo"/>
             <p id="slogan">¡Vive del estilo europeo!</p>
-            
             <nav class="menu-principal">
                 <a href="index.html">Inicio</a>
-                <a href="#ofertas">Propiedades</a>
-                <a href="#equipo">Equipo</a>
-                <a href="#contacto">Contacto</a>
+                <a href="propiedades.html">Propiedades</a>
+                <a href="equipo.html">Equipo</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
-
-            <input list="listaidiomas" id="botonidiomas" placeholder="Elige un idioma" />
-            
-            <datalist id="listaidiomas">
-                <option value="Español"></option>
-                <option value="English"></option>
-                <option value="Deutsch"></option>
-            </datalist>
-
+            <select id="botonidiomas">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
         </div>
     </header>
-
-
-
-    <a href="#contacto" id="botonsaltaid">Contáctanos Ahora</a>
-    
-    <a href="#inicio" id="btn-subir" title="Volver al inicio">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
-
-
-
+    <a href="contacto.html" id="botonsaltaid">Contáctanos Ahora</a>
+    <a href="#inicio" id="btn-subir"><i class="fa-solid fa-arrow-up"></i></a>
     <main class="contenido-principal">
-
-
-
         <section class="sobre-nosotros-wrapper seccion">
-            
-            <p class="subtitulo-principal">
-                Más que una inmobiliaria, somos arquitectos de nuevos comienzos.
-            </p>
-            
+            <p class="subtitulo-principal">Más que una inmobiliaria, somos arquitectos de nuevos comienzos.</p>
             <div class="intro-content">
-                <p>
-                    Fundada con la convicción de que comprar o vender una propiedad es uno de los hitos más importantes en la vida de una persona, nuestra agencia nació para redefinir la experiencia inmobiliaria. Nos alejamos de las transacciones frías para centrarnos en las historias humanas detrás de cada puerta.
-                </p>
-                <p>
-                    Con años de experiencia combinada en el sector, fusionamos el conocimiento tradicional del mercado con las últimas tecnologías digitales para ofrecer un servicio ágil, transparente y profundamente personalizado. Ya sea que busques tu primer apartamento, una inversión sólida o la casa de tus sueños, estamos aquí para guiarte a casa.
-                </p>
+                <p>Fundada con la convicción de que comprar o vender una propiedad es uno de los hitos más importantes en la vida de una persona, nuestra agencia nació para redefinir la experiencia inmobiliaria. Nos alejamos de las transacciones frías para centrarnos en las historias humanas detrás de cada puerta.</p>
+                <p>Con años de experiencia combinada en el sector, fusionamos el conocimiento tradicional del mercado con las últimas tecnologías digitales para ofrecer un servicio ágil, transparente y profundamente personalizado. Ya sea que busques tu primer apartamento, una inversión sólida o la casa de tus sueños, estamos aquí para guiarte a casa.</p>
             </div>
-
         </section>
-
         <hr class="separador-seccion">
-
-
-
         <section class="seccion">
-            
             <h2 class="titulo-centrado">Por qué elegirnos</h2>
-            
             <ul class="why-us-list">
-                
-                <li>
-                    <h3>Transparencia Radical</h3>
-                    <p>Creemos en la claridad absoluta. Sin letras pequeñas ni sorpresas. Te informamos de cada paso del proceso con honestidad total.</p>
-                </li>
-                
-                <li>
-                    <h3>Innovación Digital</h3>
-                    <p>Utilizamos recorridos virtuales 3D, big data para tasaciones precisas y marketing digital avanzado para maximizar el valor de tu propiedad.</p>
-                </li>
-                
-                <li>
-                    <h3>Compromiso 24/7</h3>
-                    <p>Sabemos que las oportunidades no tienen horario. Nuestro equipo está dedicado a responder tus inquietudes cuando más lo necesitas.</p>
-                </li>
-                
-                <li>
-                    <h3>Empatía Real</h3>
-                    <p>No vendemos casas, entendemos hogares. Escuchamos tus necesidades reales para encontrar no lo que el mercado ofrece, sino lo que tú necesitas.</p>
-                </li>
-
+                <li><h3>Transparencia Radical</h3><p>Creemos en la claridad absoluta. Sin letras pequeñas ni sorpresas. Te informamos de cada paso del proceso con honestidad total.</p></li>
+                <li><h3>Innovación Digital</h3><p>Utilizamos recorridos virtuales 3D, big data para tasaciones precisas y marketing digital avanzado para maximizar el valor de tu propiedad.</p></li>
+                <li><h3>Compromiso 24/7</h3><p>Sabemos que las oportunidades no tienen horario. Nuestro equipo está dedicado a responder tus inquietudes cuando más lo necesitas.</p></li>
+                <li><h3>Empatía Real</h3><p>No vendemos casas, entendemos hogares. Escuchamos tus necesidades reales para encontrar no lo que el mercado ofrece, sino lo que tú necesitas.</p></li>
             </ul>
-
         </section>
-
-
-
-        <section id="ofertas" class="galbody seccion">
-            
-            <h1 class="ofertasf">Nuestras ofertas más recientes</h1>
-            
-            <div class="galeria">
-                
-                <div class="miniaturas">
-                    <a href="#img1"><img src="img1.jpg" alt="Miniatura 1"></a>
-                    <a href="#img2"><img src="img2.jpg" alt="Miniatura 2"></a>
-                    <a href="#img3"><img src="img3.jpg" alt="Miniatura 3"></a>
-                    <a href="#img4"><img src="img4.jpg" alt="Miniatura 4"></a>
-                    <a href="#img5"><img src="img5.jpg" alt="Miniatura 5"></a>
-                </div>
-
-                <div class="contenedor-principal">
-                    
-                    <div class="imagen-grande" id="mostrar"><img src="img1.jpg" alt="Casa 1"></div>
-                    <div class="imagen-grande" id="img1"><img src="img1.jpg" alt="Casa 1"></div>
-                    <div class="imagen-grande" id="img2"><img src="img2.jpg" alt="Casa 2"></div>
-                    <div class="imagen-grande" id="img3"><img src="img3.jpg" alt="Casa 3"></div>
-                    <div class="imagen-grande" id="img4"><img src="img4.jpg" alt="Casa 4"></div>
-                    <div class="imagen-grande" id="img5"><img src="img5.jpg" alt="Casa 5"></div>
-
-                    <div class="cuadro-texto" id="texto-default">
-                        <h2>Casa Independiente |<br>Calle del Camino Alto</h2>
-                        <a href="https://maps.app.goo.gl/XaoECnGboDYPBmYB6" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 10.900.000 € | 987 m² | 7 Habitaciones</div>
-                        <p>Venta de chalet independiente en La Moraleja, reformado con primeras calidades...</p>
-                    </div>
-
-                    <div class="cuadro-texto" id="texto1">
-                        <h2>Casa Independiente |<br>Calle del Camino Alto</h2>
-                        <a href="https://maps.app.goo.gl/XaoECnGboDYPBmYB6" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 10.900.000 € | 987 m² | 7 Habitaciones</div>
-                        <p>Venta de chalet independiente en La Moraleja, reformado con primeras calidades...</p>
-                    </div>
-
-                    <div class="cuadro-texto" id="texto2">
-                        <h2>Casa Independiente | Camino Ancho</h2>
-                        <a href="https://maps.app.goo.gl/gfnUwweHPcBu1Sdr7" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 4.600.000 € | 800 m² | 5 Habitaciones</div>
-                        <p>Chalet independiente en La Moraleja (zona emblemática). Parcela espectacular con gran potencial para reforma integral.</p>
-                    </div>
-
-                    <div class="cuadro-texto" id="texto3">
-                        <h2>Casa Independiente | Aravaca</h2>
-                        <a href="https://maps.app.goo.gl/p2QxtogoD1G6qtmx9" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 3.100.000 € | 746 m² | 6 Habitaciones</div>
-                        <p>Moderno independiente en Aravaca. Imponente vivienda unifamiliar construida en hormigón blanco.</p>
-                    </div>
-
-                    <div class="cuadro-texto" id="texto4">
-                        <h2>Casa Independiente | Adelfas</h2>
-                        <a href="https://maps.app.goo.gl/BDBsDe46awyJYjC86" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 4.500.000 € | 1.104 m² | 6 Habitaciones</div>
-                        <p>Ubicada en Montepríncipe, Boadilla, cuenta con seguridad 24h. 1.103 m² construidos en 3 plantas.</p>
-                    </div>
-
-                    <div class="cuadro-texto" id="texto5">
-                        <h2>Casa Independiente | Retama</h2>
-                        <a href="https://maps.app.goo.gl/fLeUS6YHDFZM94Fc9" target="_blank" class="boton-mapa">Ver Ubicación</a>
-                        <div>• 4.000.000 € | 1.075 m² | 5 Habitaciones</div>
-                        <p>Ubicada en Monte de las Encinas (Boadilla), esta vivienda de diseño moderno se asienta en parcela de 2.000 m².</p>
-                    </div>
-
-                </div>
-
+    </main>
+    <footer class="pie-pagina">
+        <div class="footer-contenido">
+            <p>© 2026 Europa Inmobiliaria. Todos los derechos reservados.</p>
+            <div class="enlaces-legales">
+                <a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a> | <a href="#">Política de Cookies</a>
             </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("botonidiomas").addEventListener("change", function() {
+            let idiomaElegido = this.value;
+            let paginaActual = window.location.pathname.split("/").pop() || "index.html";
+            let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
 
-        </section>
-
-        <hr class="separador-seccion">
-
-
-
-        <section id="equipo" class="team-section seccion">
-            
-            <h2 class="titulo-centrado">Nuestro Equipo</h2>
-            
-            <div class="vision-team">
-                <p>
-                    <b>Un equipo multidisciplinario, una sola misión.</b> Trabajamos codo a codo, combinando estrategia y pasión, para asegurar que cada cliente se sienta respaldado por expertos en cada área del sector.
-                </p>
-            </div>
-
-            <div class="perfiles-grid"> 
-
-                <div class="team-card">
-                    <img src="Aaron.jpg" alt="Aaron" class="team-photo">
-                    <h3>Aaron</h3>
-                    <span class="cargo">Director General & Estrategia</span>
-                    <p>Con una visión global del mercado, Aaron es el capitán del barco. Anticipa tendencias y lidera el camino.</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="Alex.jpeg" alt="Alex" class="team-photo">
-                    <h3>Alex</h3>
-                    <span class="cargo">Gerente de Ventas y Negociación</span>
-                    <p>Experto negociador, lucha incansablemente por conseguir el mejor precio para nuestros clientes.</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="Alexis.jpg" alt="Alexis" class="team-photo">
-                    <h3>Alexis</h3>
-                    <span class="cargo">Consultor Legal y Financiero</span>
-                    <p>Su perfil analítico brinda tranquilidad legal total en cada trámite, contrato y gestión.</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="Leandro.jpg" alt="Leandro" class="team-photo">
-                    <h3>Leandro</h3>
-                    <span class="cargo">Director de Marketing & Experiencia</span>
-                    <ul class="lista-perfil">
-                        <li>El ojo creativo del grupo.</li>
-                        <li>Estratega digital.</li>
-                        <li>Garantiza una experiencia impecable.</li>
-                    </ul>
-                </div>
-
-                <div class="team-card">
-                    <img src="Valeria.jpg" alt="Valeria" class="team-photo">
-                    <h3>Valeria</h3>
-                    <span class="cargo">Arquitecta de Interiores</span>
-                    <p>Ayuda a los clientes a visualizar el potencial oculto de cada espacio antes de comprar.</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="Hugo.jpg" alt="Hugo" class="team-photo">
-                    <h3>Hugo</h3>
-                    <span class="cargo">Coordinador de Atención al Cliente</span>
-                    <p>La voz amable de la agencia. Resuelve dudas y organiza la agenda de visitas con una sonrisa.</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="Carmen.jpg" alt="Carmen" class="team-photo">
-                    <h3>Carmen</h3>
-                    <span class="cargo">Especialista en Propiedades de Lujo</span>
-                    <p>Conecta propiedades exclusivas con compradores
+            if (idiomaElegido === "es") {
+                window.location.href = paginaBase; 
+            } else {
+                window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html"); 
+            }
+        });
+    </script>
+</body>
+</html>
