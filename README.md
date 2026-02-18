@@ -5,7 +5,7 @@ Mejoras
 
 - Boton para subir arriba en cualquier momento
 
-- Cambiado el error en la página de casas que al tocar causó bajar demasiado y que no se mostraba parte del título y descripción
+- Cambiado el error en la página de casas que al tocar causó bajar demasiado y que no se mostraba parte del título y descripción (insertar un preventDefault)
 
 
 
