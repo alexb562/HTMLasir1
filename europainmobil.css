@@ -90,29 +90,6 @@ body {
     background: #396c95;
 }
 
-#btn-subir {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #a7b2f1;
-    color: white;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 20px;
-    z-index: 900;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: background 0.3s;
-}
-
-#btn-subir:hover {
-    background: #0A2836;
-}
-
 .contenido-principal {
     padding-top: 120px;
 }
@@ -639,4 +616,33 @@ button[type="submit"]:hover {
 
 .mensaje-error-check {
     margin-left: 10px;
+}
+
+#btn-subir {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #a7b2f1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 900;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+#btn-subir:hover {
+    background-color: #0A2836;
+}
+
+#btn-subir img {
+    width: 22px;
+    height: auto;
+    display: block;
 }
