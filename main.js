@@ -10,19 +10,17 @@ document.addEventListener('keydown', function(event) {
 
 
 window.onload = () => {
+  
   const idioma = navigator.language;
   const pantalla = `${screen.width}x${screen.height}`;
   console.log(`Info del browser: Idioma = ${idioma}, Pantalla = ${pantalla}`);
-};
-//evento onload para ver informacion del browser
-
-
-window.onload = () => {
-  // Attach mouseout events to the outer card only
+    //evento info del browser que se carga en la consola
+  
   document.getElementById("aaron-card").onmouseout = () => alert("¡Gracias por ver a Aaron!");
   document.getElementById("alex-card").onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!");
   document.getElementById("alexis-card").onmouseout = () => alert("¡Alexis te cuida legalmente!");
   document.getElementById("leandro-card").onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
+  //evento onmouseout al salir de las 4 primeras tarjetas del equipo
 };
 
 document.addEventListener("DOMContentLoaded", () => {
