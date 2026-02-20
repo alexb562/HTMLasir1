@@ -1,5 +1,6 @@
+
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'a') {
+    if (event.key === '/' && event.ctrlKey) {
         const link = document.createElement('a');
         link.href = 'politicacookies.pdf';
         link.download = 'politicacookies.pdf';
@@ -8,20 +9,67 @@ document.addEventListener('keydown', function(event) {
 });
 // al pulsar a se descarga el tercer documento
 
-
 window.onload = () => {
-  
+
   const idioma = navigator.language;
   const pantalla = `${screen.width}x${screen.height}`;
   console.log(`Info del browser: Idioma = ${idioma}, Pantalla = ${pantalla}`);
-    //evento info del browser que se carga en la consola
+//usa un evento onload para guardar en idioma y tamaño de la pantalla en la consola
+
+  let nombre = sessionStorage.getItem("nombre");
+
+  if (!nombre) {
+    nombre = prompt("¿Cuál es tu nombre?");
+    if (nombre) {
+      sessionStorage.setItem("nombre", nombre);
+    }
+  }
+
+  if (nombre) {
+    const nombreMayuscula = nombre.toUpperCase();
+    const longitud = nombre.length;
+    const primerCaracter = nombre.charAt(0);
+
+    console.log(`Nombre: ${nombre}`);
+    console.log(`Nombre en mayúscula: ${nombreMayuscula}`);
+    console.log(`Longitud: ${longitud}`);
+    console.log(`Primer carácter (índice 0): ${primerCaracter}`);
+  }
+  //prompt el usuario para informacion y usa un evento string para guardar nombre en mayus, longitud y primer caracter (usa sessionstorage para que cuando cargamos los otros html no pregunta de nuevo)
+ 
+
   
-  document.getElementById("aaron-card").onmouseout = () => alert("¡Gracias por ver a Aaron!");
-  document.getElementById("alex-card").onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!");
-  document.getElementById("alexis-card").onmouseout = () => alert("¡Alexis te cuida legalmente!");
-  document.getElementById("leandro-card").onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
-  //evento onmouseout al salir de las 4 primeras tarjetas del equipo
+
+
+  const aaronCard = document.getElementById("aaron-card");
+  if (aaronCard) aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!");
+
+  const alexCard = document.getElementById("alex-card");
+  if (alexCard) alexCard.onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!");
+
+  const alexisCard = document.getElementById("alexis-card");
+  if (alexisCard) alexisCard.onmouseout = () => alert("¡Alexis te cuida legalmente!");
+
+  const leandroCard = document.getElementById("leandro-card");
+  if (leandroCard) leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
+// evento mouseout que saca un mensaje cuando el usuario salga de la tarjeta de equipo
+
+
+  
+  const nombrePagina = window.location.pathname.split('/').pop();
+  if (nombrePagina === 'propiedades.html') {
+    const precioMaximoEUR = 10900000;
+    const precioMaximoUSD = Math.round(precioMaximoEUR * 1.08 * 100) / 100;
+    const precioFormateadoUSD = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    }).format(precioMaximoUSD);
+    alert(`El precio de la casa más cara en USD es: ${precioFormateadoUSD}`);
+  }
 };
+//un objeto math que calcula el precio de la casa mas cara en USD usando la conversion 1.08. Hemos tenido que buscar en linea como se usa pathname split para que la alerta solo aparezca en esta pagina
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
