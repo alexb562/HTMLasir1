@@ -14,9 +14,15 @@
 
 
 # Eventos
-- Definimos en los documentos legales un evento onclick con diferentes resultados en cada uno. El primer documento se abre en una nueva pestaña. El segundo y tercero se abren con ventanas de tamaños diferentes
+- Definimos en los documentos legales un evento onclick con diferentes resultados en cada uno. El primer documento se abre en una nueva pestaña. El segundo se abre con una ventana de tamaño diferente
 
-- Un evento mouseover que saca una alerta cada vez que se ponga el ratón sobre los enlaces de los documentos
+- Un evento mouseover que saca una alerta cada vez que se ponga el ratón sobre el tercer documento
+
+- Un evento keydown que al pulsar a en el teclado se abre el tercer documento
+
+- Un evento onload que saca el idioma y tamaño de la pantalla en la consola
+
+- Un evento onmouseout que al salir de las tarjetas de los miembros del equipo pone una alerta
 
 
 # Otros JS

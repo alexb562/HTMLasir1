@@ -1,15 +1,29 @@
-function showPrompt(documentName) {
-    const response = prompt(`¿Vas a ver el documento "${documentName}"? Introduce "si" para verlo o "no" para salir.`);
-
-    if (response && response.toLowerCase() === "si") {
-        window.open(`${documentName.toLowerCase().replace(' ', '-')}.pdf`, '_blank');
-    } else if (response && response.toLowerCase() === "no") {
-        alert("Has decidido no ver el documento.");
-    } else {
-        alert("Por favor, introduce 'si' o 'no'.");
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'a') {
+        const link = document.createElement('a');
+        link.href = 'politicacookies.pdf';
+        link.download = 'politicacookies.pdf';
+        link.click();
     }
-}
-//la funcion mouseover
+});
+// al pulsar a se descarga el tercer documento
+
+
+window.onload = () => {
+  const idioma = navigator.language;
+  const pantalla = `${screen.width}x${screen.height}`;
+  console.log(`Info del browser: Idioma = ${idioma}, Pantalla = ${pantalla}`);
+};
+//evento onload para ver informacion del browser
+
+
+window.onload = () => {
+  // Attach mouseout events to the outer card only
+  document.getElementById("aaron-card").onmouseout = () => alert("¡Gracias por ver a Aaron!");
+  document.getElementById("alex-card").onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!");
+  document.getElementById("alexis-card").onmouseout = () => alert("¡Alexis te cuida legalmente!");
+  document.getElementById("leandro-card").onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
+};
 
 document.addEventListener("DOMContentLoaded", () => {
 
