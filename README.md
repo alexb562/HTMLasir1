@@ -42,7 +42,7 @@
 - Alerta al entrar la página con un mensaje de bienvenida
 
 
-# Formulario
+# Formulario y validación
 - Implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 
 

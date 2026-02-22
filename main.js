@@ -1,4 +1,4 @@
-// ===== DATE AND TIME =====
+// evento date que añade la fecha,día y hora actualizando cada minuto
 function actualizarFechaYHora() {
     const fechaActual = new Date();
     const opciones = {
@@ -20,7 +20,10 @@ function actualizarFechaYHora() {
 actualizarFechaYHora();
 setInterval(actualizarFechaYHora, 1000 * 60);
 
-// ===== KEYBOARD EVENT (Ctrl+/) =====
+
+
+
+// evento keydown que al pulsar ctrl y / se descarga el tercer documento en index.html
 document.addEventListener('keydown', function(event) {
     if (event.key === '/' && event.ctrlKey) {
         const link = document.createElement('a');
@@ -30,7 +33,9 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// ===== BROWSER INFO & SESSION STORAGE =====
+
+
+// Objeto screen que saca información sobre el browser, pantalla etc en la consola
 const idioma = navigator.language;
 const pantalla = `${screen.width}x${screen.height}`;
 const appName = navigator.appName;
@@ -59,7 +64,7 @@ if (nombre) {
     console.log(`Primer carácter (índice 0): ${primerCaracter}`);
 }
 
-// ===== TEAM CARDS MOUSEOUT =====
+// evento mouseout que al salir de una tarjeta de equipo saca una alerta 
 document.addEventListener('DOMContentLoaded', function() {
 const aaronCard = document.getElementById("aaron-card");
 if (aaronCard) aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!");
@@ -73,7 +78,30 @@ if (alexisCard) alexisCard.onmouseout = () => alert("¡Alexis te cuida legalment
 const leandroCard = document.getElementById("leandro-card");
 if (leandroCard) leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
 
-// ===== PRICE CONVERSION (propiedades.html only) =====
+
+
+// botón para cambiar colores de fondo y títulos (usando dom para cambiar elementos css)
+let colorsChanged = false;
+const changeButton = document.getElementById('cambiar-colores');
+if (changeButton) {
+    changeButton.addEventListener('click', function() {
+        if (!colorsChanged) {
+            document.body.style.backgroundColor = 'lightblue';
+            const titles = document.querySelectorAll('h1, h2, h3');
+            titles.forEach(title => title.style.color = 'red');
+            colorsChanged = true;
+        } else {
+            document.body.style.backgroundColor = '';
+            const titles = document.querySelectorAll('h1, h2, h3');
+            titles.forEach(title => title.style.color = '');
+            colorsChanged = false;
+        }
+    });
+}
+
+
+
+// evento math que saca el precio de la casa más cara en USD en propiedades.html
 const nombrePagina = window.location.pathname.split('/').pop();
 if (nombrePagina === 'propiedades.html') {
     const precioMaximoEUR = 10900000;
@@ -86,7 +114,9 @@ if (nombrePagina === 'propiedades.html') {
     alert(`El precio de la casa más cara en USD es: ${precioFormateadoUSD}`);
 }
 
-// ===== LANGUAGE SELECTOR =====
+
+
+// combinación de ifs que cambia el idioma de la página cuando se seleccione un idioma
 const idiomaActual = document.documentElement.lang || "es";
 
 const selectorIdioma = document.getElementById("botonidiomas");
@@ -109,7 +139,9 @@ if (selectorIdioma) {
     });
 }
 
-// ===== GALLERY =====
+
+
+// galeria de casas en propediades.html
 const enlacesGaleria = document.querySelectorAll('.miniaturas a');
 
 if (enlacesGaleria.length > 0) {
@@ -134,7 +166,9 @@ if (enlacesGaleria.length > 0) {
     });
 }
 
-// ===== WELCOME MESSAGE =====
+
+
+// mensaje de bienvenida al cargar la página, sessionStorage guarda el estado de si ya se ha mostrado el mensaje para no mostrarlo de nuevo en la misma sesión
 setTimeout(() => {
     if (!sessionStorage.getItem("bienvenida")) {
         let mensaje = "¡Bienvenido a Europa Inmobiliaria! Estamos aquí para ayudarte a encontrar tu hogar.";
@@ -146,7 +180,9 @@ setTimeout(() => {
     }
 }, 2000);
 
-// ===== SLOGAN ANIMATION =====
+
+
+// función a intervalos que se puede parar al hacer clic
 const slogan = document.getElementById("slogan");
 if (slogan) {
     const esloganes = {
@@ -182,7 +218,9 @@ if (slogan) {
     else slogan.title = "Haz clic para pausar la animación";
 }
 
-// ===== FORM VALIDATION =====
+
+
+// validación del formulario que usa expresiónes regex para comprobar tanto el estado de cada caja individualmente como enviar el formulario si todo no está correcto
 const formulario = document.getElementById("formulario-contacto");
 
 if (formulario) {
@@ -389,4 +427,4 @@ if (formulario) {
     });
     }
 
-}); // END OF DOMContentLoaded
+});
