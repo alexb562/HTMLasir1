@@ -30,6 +30,10 @@
 
 - Objeto math - da una alerta que calcula el precio de la casa más cara (calle del camino alto) en USD usando la conversión 1.08
 
+- Objeto fecha - incluye la fecha actual hasta el minuto
+
+-Objeto screen - al cargar la consola saca información sobre el navegador como appversion, platform etc
+
 
 # Otros JS
 - Botón de idiomas - ahora interactivo usando indices para cambiar el idioma de la página
