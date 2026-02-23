@@ -13,9 +13,9 @@ function actualizarFechaYHora() {
         elemento.innerText = `${dia}/${mes}/${año} ${hora}:${minutos}`
      }
 }
-
+setInterval(actualizarFechaYHora, 60000); // actualiza cada minuto
 actualizarFechaYHora()
-//actualiza cada minuto
+
 
 
 
@@ -66,26 +66,67 @@ if (nombre) {
 document.addEventListener('DOMContentLoaded', function() {
     const aaronCard = document.getElementById("aaron-card");
     if (aaronCard) {
-        aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!")
-     }
- //insertamos un mouseout en las 4 primeras tarjetas con mensajes diferentes
-    const alexCard = document.getElementById("alex-card")
+        aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!");
+    }
+    const alexCard = document.getElementById("alex-card");
     if (alexCard) {
-        alexCard.onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!")
+        alexCard.onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!");
     }
-
-    const alexisCard = document.getElementById("alexis-card")
+    const alexisCard = document.getElementById("alexis-card");
     if (alexisCard) {
-        alexisCard.onmouseout = () => alert("¡Alexis te cuida legalmente!")
+        alexisCard.onmouseout = () => alert("¡Alexis te cuida legalmente!");
+    }
+    const leandroCard = document.getElementById("leandro-card");
+    if (leandroCard) {
+        leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!");
     }
 
-    const leandroCard = document.getElementById("leandro-card");
-    if (leandroCard) 
-        leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!")
-     }
-)
 
 
+
+    //Creando las tarjetas interactivas de propiedades 
+    const botonesDetalles = document.querySelectorAll('.btn-detalles')
+    const modal = document.getElementById('modal-propiedad')
+    const btnCerrar = document.querySelector('.cerrar-modal')
+    //seleccionamos un tipo de array de botones para abrir la ventana de detalles
+    
+    if (botonesDetalles.length > 0 && modal)  {
+        const modalImg = document.getElementById('modal-img')
+        const modalTitulo = document.getElementById('modal-titulo')
+        const modalPrecio = document.getElementById('modal-precio')
+        const modalDesc = document.getElementById('modal-desc')
+        //cuatro contenedores que guardan la información sobre precio, descripción etc
+
+        botonesDetalles.forEach(boton => {
+            boton.addEventListener('click', (evento) => {
+                evento.preventDefault()
+                const tarjeta = boton.closest('.card-propiedad')
+                
+                modalImg.src = tarjeta.querySelector('.card-img').src
+                modalTitulo.innerText = tarjeta.querySelector('.card-titulo').innerText
+                modalPrecio.innerText = tarjeta.querySelector('.card-precio').innerText
+                modalDesc.innerText = tarjeta.querySelector('.card-descripcion').innerText
+                // sacamos la información desde la tarjeta para incluir en el modal
+                modal.classList.remove('modal-oculto')
+                modal.classList.add('modal-visible')
+            })
+        })
+
+        if (btnCerrar) {
+            btnCerrar.addEventListener('click', () => {
+                modal.classList.remove('modal-visible')
+                modal.classList.add('modal-oculto')
+            })
+        }
+        //conectamos el botón de cerrar con el evento para cerrar el modal
+        window.addEventListener('click', (evento) => {
+            if (evento.target === modal) {
+                modal.classList.remove('modal-visible')
+                modal.classList.add('modal-oculto')
+            }
+        })
+    }
+})
 
 // botón para cambiar colores de fondo y títulos (usando dom para cambiar elementos css)
 let cambioColores = false
@@ -146,29 +187,6 @@ if (selectorIdioma) {
     });
 }
 
-
-
-// galeria de casas en propediades.html
-const enlacesGaleria = document.querySelectorAll('.miniaturas a')
-//enlaces para hacer clic en las fotos
-if (enlacesGaleria.length > 0) {
-    enlacesGaleria.forEach(enlace => {
-        enlace.addEventListener('click', function(e) {
-            e.preventDefault()
-            const todasLasImagenes = document.querySelectorAll('.imagen-grande')
-            const todosLosTextos = document.querySelectorAll('.cuadro-texto')
-            todasLasImagenes.forEach(img => img.style.display = 'none')
-            todosLosTextos.forEach(txt => txt.style.display = 'none')
-            const idDestino = this.getAttribute('href')
-            const imagenAMostrar = document.querySelector(idDestino)
-            const numeroTexto = idDestino.replace('#img', '')
-            const textoAMostrar = document.getElementById('texto' + numeroTexto)
-            if (imagenAMostrar) imagenAMostrar.style.display = 'block'
-            if (textoAMostrar) textoAMostrar.style.display = 'block'
-            //tiene que esconder todas las imágenes primero y luego muestra solo la sobre la que hemos hecho clic
-        })
-    })
-}
 
 
 

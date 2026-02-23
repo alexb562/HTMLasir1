@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="europainmobil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body id="inicio">
-    <a href="#inicio" id="btn-subir"><img src="flecha-arriba.png" alt="Subir al inicio"></a>
+    <a href="#inicio" id="btn-subir"><img src="flecha-arriba.png" alt="Nach oben"></a>
     <header class="cabecera">
         <div class="cabecera-contenido">
-            <img id="logo" src="logo.png" alt="Logo"/>
+            <img id="logo" src="logo.png" alt="Europa Inmobiliaria Logo"/>
             <p id="slogan">Erleben Sie den europäischen Stil!</p>
             <nav class="menu-principal">
                 <a href="index-de.html">Startseite</a>
-                <a href="propiedades-de.html">Immobilien</a>
+                <a href="propiedades-de.html" class="activo">Immobilien</a>
                 <a href="equipo-de.html">Team</a>
                 <a href="contacto-de.html">Kontakt</a>
             </nav>
@@ -25,67 +26,203 @@
             </select>
         </div>
     </header>
+    
     <main class="contenido-principal">
-        <section class="galbody seccion">
-            <h1 class="ofertasf">Unsere neuesten Angebote</h1>
-            <div class="galeria">
-                <div class="miniaturas">
-                    <a href="#img1"><img src="img1.jpg" alt="1"></a>
-                    <a href="#img2"><img src="img2.jpg" alt="2"></a>
-                    <a href="#img3"><img src="img3.jpg" alt="3"></a>
-                    <a href="#img4"><img src="img4.jpg" alt="4"></a>
-                    <a href="#img5"><img src="img5.jpg" alt="5"></a>
-                </div>
-                <div class="contenedor-principal">
-                    <div class="imagen-grande" id="mostrar"><img src="img1.jpg" alt="1"></div>
-                    <div class="imagen-grande" id="img1"><img src="img1.jpg" alt="1"></div>
-                    <div class="imagen-grande" id="img2"><img src="img2.jpg" alt="2"></div>
-                    <div class="imagen-grande" id="img3"><img src="img3.jpg" alt="3"></div>
-                    <div class="imagen-grande" id="img4"><img src="img4.jpg" alt="4"></div>
-                    <div class="imagen-grande" id="img5"><img src="img5.jpg" alt="5"></div>
-                    <div class="cuadro-texto" id="texto-default">
-                        <h2>Einfamilienhaus | Camino Alto Straße</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 10.900.000 € | 987 m² | 7 Zimmer</div>
-                        <p>Verkauf einer unabhängigen Villa in La Moraleja, renoviert mit erstklassigen Qualitäten...</p>
+        <section class="seccion-propiedades seccion">
+            <div class="cabecera-propiedades">
+                <h1 class="titulo-elegante">Unsere neuesten Angebote</h1>
+                <p class="subtitulo-propiedades">Exklusive Immobilien für Sie ausgewählt</p>
+            </div>
+
+            <div class="grid-propiedades">
+                
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img1.jpg" alt="Villa in Camino Alto" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Zu verkaufen</span></div>
+                        <div class="card-precio">10.900.000 €</div>
                     </div>
-                    <div class="cuadro-texto" id="texto1">
-                        <h2>Einfamilienhaus | Camino Alto Straße</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 10.900.000 € | 987 m² | 7 Zimmer</div>
-                        <p>Verkauf einer unabhängigen Villa in La Moraleja, renoviert mit erstklassigen Qualitäten...</p>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Camino Alto</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> La Moraleja</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 987 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 7 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Verkauf einer freistehenden Villa in La Moraleja, renoviert mit Top-Qualitäten. Großer Garten mit Pool für Veranstaltungen im Freien.</p>
                     </div>
-                    <div class="cuadro-texto" id="texto2">
-                        <h2>Einfamilienhaus | Camino Ancho</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 4.600.000 € | 800 m² | 5 Zimmer</div>
-                        <p>Unabhängige Villa in La Moraleja. Spektakuläres Grundstück mit großem Potenzial für eine umfassende Sanierung.</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
                     </div>
-                    <div class="cuadro-texto" id="texto3">
-                        <h2>Einfamilienhaus | Aravaca</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 3.100.000 € | 746 m² | 6 Zimmer</div>
-                        <p>Modernes Einfamilienhaus in Aravaca. Imposantes Einfamilienhaus aus weißem Beton.</p>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img2.jpg" alt="Haus in Camino Ancho" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Zu verkaufen</span></div>
+                        <div class="card-precio">4.600.000 €</div>
                     </div>
-                    <div class="cuadro-texto" id="texto4">
-                        <h2>Einfamilienhaus | Adelfas</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 4.500.000 € | 1.104 m² | 6 Zimmer</div>
-                        <p>In Montepríncipe, Boadilla, mit 24h Sicherheit. 1.103 qm auf 3 Etagen gebaut.</p>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Camino Ancho</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> La Moraleja</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 800 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 5 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Freistehende Villa in La Moraleja. Spektakuläres Grundstück mit großem Potenzial für eine umfassende Renovierung.</p>
                     </div>
-                    <div class="cuadro-texto" id="texto5">
-                        <h2>Einfamilienhaus | Retama</h2>
-                        <a href="#" class="boton-mapa">Standort anzeigen</a>
-                        <div>• 4.000.000 € | 1.075 m² | 5 Zimmer</div>
-                        <p>Dieses moderne Designhaus in Monte de las Encinas (Boadilla) liegt auf einem 2.000 qm großen Grundstück.</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
                     </div>
-                </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img3.jpg" alt="Haus in Aravaca" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Ausgewählt</span></div>
+                        <div class="card-precio">3.100.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Aravaca</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> Aravaca, Madrid</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 746 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 6 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Modernes Einfamilienhaus in Aravaca. Imposantes Haus aus weißem Beton.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img4.jpg" alt="Haus in Adelfas" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Zu verkaufen</span></div>
+                        <div class="card-precio">4.500.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Adelfas</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> Montepríncipe, Boadilla</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 1.104 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 6 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Befindet sich in Montepríncipe, Boadilla, mit 24h-Sicherheit. 1.103 m² auf 3 Etagen.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img5.jpg" alt="Haus in Retama" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Exklusiv</span></div>
+                        <div class="card-precio">4.000.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Retama</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> Monte de las Encinas</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 1.075 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 5 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Dieses modern gestaltete Haus befindet sich in Monte de las Encinas (Boadilla) auf einem 2.000 m² großen Grundstück.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img6.jpg" alt="Haus in Canexel" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Zu verkaufen</span></div>
+                        <div class="card-precio">3.200.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Canexel</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> Canexel</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 850 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 6 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Dieses moderne Haus in Canexel verfügt über ein großes Wohnzimmer mit Kamin und direkten Zugang zum Garten.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img7.jpg" alt="Haus in Puertas Verdes" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Neu</span></div>
+                        <div class="card-precio">4.000.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | Puertas Verdes</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> Puertas Verdes</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 750 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 5 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Befindet sich im ruhigen Viertel Puertas Verdes, erhält viel natürliches Licht und bietet eine spektakuläre Aussicht.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-propiedad">
+                    <div class="card-imagen-contenedor">
+                        <img src="img8.jpg" alt="Haus in La Moraleja" class="card-img">
+                        <div class="card-etiquetas"><span class="etiqueta-estado">Zu verkaufen</span></div>
+                        <div class="card-precio">1.550.000 €</div>
+                    </div>
+                    <div class="card-contenido">
+                        <h3 class="card-titulo">Einfamilienhaus | La Moraleja</h3>
+                        <p class="card-ubicacion"><i class="fa-solid fa-location-dot"></i> La Moraleja</p>
+                        <ul class="card-detalles">
+                            <li><i class="fa-solid fa-ruler-combined"></i> 450 m²</li>
+                            <li><i class="fa-solid fa-bed"></i> 4 Schlafz.</li>
+                        </ul>
+                        <p class="card-descripcion">Eines der symbolträchtigsten Häuser in La Moraleja, mit einer privilegierten Lage und einer sorgfältigen Renovierung.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-detalles">Details ansehen</a>
+                        <button class="btn-favorito" title="Zu Favoriten hinzufügen"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </article>
+
             </div>
         </section>
     </main>
+    
     <footer class="pie-pagina">
         <p>© 2026 Europa Inmobiliaria. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <div id="modal-propiedad" class="modal-oculto">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <img id="modal-img" src="" alt="Eigenschaftsbild">
+            <h2 id="modal-titulo">Eigentumstitel</h2>
+            <p id="modal-precio" class="modal-precio-destacado">Preis</p>
+            <p id="modal-desc">Die vollständige Beschreibung erscheint hier...</p>
+            <button class="btn-contacto-modal">Kontaktieren Sie uns wegen dieser Immobilie</button>
+        </div>
+    </div>
+    
     <script src="main.js"></script>
 </body>
 </html>
