@@ -218,6 +218,7 @@ if (eslogan) {
         eslogan.style.color = "#396c95"
         eslogan.style.cursor = "default"
     })
+    //conectamos click con el event listener para parar la animación 
     
     eslogan.style.cursor = "pointer"
     
@@ -247,6 +248,7 @@ if (formulario) {
         privacidad: false,
         origen: false
     }
+    //campos inicialmente falsos y hay que completar las condiciones para ser true
     
     const mostrarError = (idInput, mensaje) => {
         const input = document.getElementById(idInput)
@@ -259,7 +261,8 @@ if (formulario) {
             mensajeError.textContent = mensaje
             input.parentNode.appendChild(mensajeError)
         }
-    };
+    }
+    //creamos la función para mostrar el error que le da una clase al input para ponerlo rojo si no cumple con las condiciones
 
     const quitarError = (idInput) => {
         const input = document.getElementById(idInput)
@@ -267,7 +270,8 @@ if (formulario) {
         
         let errorPrevio = input.parentNode.querySelector(".mensaje-error")
         if (errorPrevio) input.parentNode.removeChild(errorPrevio)
-    };
+    }
+//si el input cumple con las condiciones quitamos el error para que no se quede
 
     const validarCampoTexto = (e) => {
         const id = e.target.id
@@ -276,7 +280,8 @@ if (formulario) {
         if (expresiones[id].test(valor)) {
             quitarError(id)
             camposValidos[id] = true
-        } else {
+            //si hemos cumplido las conidiciones quitamos el error, else ponemos los mensajes de error
+        } else  {
             let msg = ""
             if (idiomaActual === "en") {
                 if (id === "nombre") msg = "Must contain only letters (min 3)."
@@ -291,31 +296,37 @@ if (formulario) {
                 if (id === "email") msg = "Debe ser un correo válido (ej: nombre@correo.com).";
                 if (id === "telefono") msg = "Debe contener exactamente 9 números."
             }
+            //mensajes para mostrar basado en el idioma seleccionado
             mostrarError(id, msg)
             camposValidos[id] = false
         }
-    };
+    }
 
     const validarSelect = () => {
         const pob = document.getElementById("poblacion")
         if (pob.value === "") {
+            //si no se ha seleccionado nada ("")
             let msg = "Debes seleccionar una población de la lista."
             if (idiomaActual === "en") msg = "You must select a location from the list."
-            if (idiomaActual === "de") msg = "Sie müssen einen Ort aus der Liste auswählen.";
+            if (idiomaActual === "de") msg = "Sie müssen einen Ort aus der Liste auswählen."
             mostrarError("poblacion", msg)
             camposValidos.poblacion = false
         } else {
             quitarError("poblacion")
             camposValidos.poblacion = true
+            //si se ha cumplido
         }
-    };
+    }
+    //validar campo individual que es el menu desplegable
 
     const validarRadios = () => {
         const opciones = document.getElementsByName("operacion")
+        //recorremos todos los botones radio
         let seleccionado = false
         for (let i = 0; i < opciones.length; i++) {
             if (opciones[i].checked) seleccionado = true;
         }
+        //recorre los botones y si hay algo seleccionado hemos cumplido la condición
         
         const contenedorRadios = document.getElementById("grupo-operacion");
         let errorPrevio = contenedorRadios.parentNode.querySelector(".mensaje-error-radio")
@@ -329,34 +340,42 @@ if (formulario) {
                 if (idiomaActual === "de") msg = "Sie müssen eine Operationsart auswählen."
                 msgSpan.textContent = msg;
                 contenedorRadios.parentNode.insertBefore(msgSpan, contenedorRadios.nextSibling);
+                //bucle para producir el mensaje de error si no está seleccionado (! significa no)
             }
             camposValidos.operacion = false
         } else {
             if (errorPrevio) errorPrevio.remove();
             camposValidos.operacion = true
+            //si no hay mensaje de error señala que la selección es válida
         }
-    };
+    }
+
 
     const validarTextarea = () => {
-        const msj = document.getElementById("mensaje")
-        if (msj.value.length < 10) {
+        const longitudMensaje = document.getElementById("mensaje")
+        // seleccionamos el elemento de textarea
+        if (longitudMensaje.value.length < 10) {
+            //si el mensaje es menor de 10 caracteres, también añadimos los casos para los otros idiomas
             let msg = "El mensaje es muy corto (mínimo 10 caracteres)."
             if (idiomaActual === "en") msg = "The message is too short (min 10 characters)."
             if (idiomaActual === "de") msg = "Die Nachricht ist zu kurz (min 10 Zeichen)."
             mostrarError("mensaje", msg)
             camposValidos.mensaje = false
-        } else {
+        } else  {
             quitarError("mensaje")
             camposValidos.mensaje = true
+            //si se cumple no hay error
         }
-    };
+    }
 
     const validarCheckbox = () => {
         const priv = document.getElementById("privacidad")
+        //misma forma que los demás, seleccionamos el checkbox basado en la id
         const divCheck = priv.parentNode
         let error = divCheck.querySelector(".mensaje-error-check")
 
         if (!priv.checked) {
+            //si el checkbox no está marcado sigue la lógica de errores
             if (!error) {
                 const msgSpan = document.createElement("span")
                 msgSpan.classList.add("mensaje-error-check")
@@ -366,10 +385,11 @@ if (formulario) {
                 msgSpan.textContent = msg
                 divCheck.appendChild(msgSpan)
             }
-            camposValidos.privacidad = false
+             camposValidos.privacidad = false
         } else {
             if (error) error.remove()
             camposValidos.privacidad = true
+        //misma lógica de no poner error si se cumple la condición
         }
     }
 
@@ -378,6 +398,7 @@ if (formulario) {
         let seleccionado = false
         for (let i = 0; i < opciones.length; i++) {
             if (opciones[i].checked) seleccionado = true
+            //usa un bucle para recorrer los checkboxes para ver si hay uno seleccionado
         }
         
         const contenedorCheckboxes = document.getElementById("grupo-origen")
@@ -402,6 +423,7 @@ if (formulario) {
     
     const inputNombre = document.getElementById("nombre")
     if (inputNombre) inputNombre.addEventListener("blur", validarCampoTexto)
+        //blur se usa para validar el campo cuando el usario sale del input, usando un método dinámico para validar y señalar inmediatamente al usuario 
 
     const inputEmail = document.getElementById("email")
     if (inputEmail) inputEmail.addEventListener("blur", validarCampoTexto)
@@ -426,28 +448,34 @@ if (formulario) {
     
     formulario.addEventListener("submit", (e) => {
         e.preventDefault()
+        //ya que hemos validado cada campo en sí tenemos que validar el conjunto de todos para que no se envíe el formulario vacío
 
         const nombreEl = document.getElementById("nombre")
         if (nombreEl) validarCampoTexto({ target: nombreEl })
              else camposValidos.nombre = false
+            //campo nombre
 
         const emailEl = document.getElementById("email")
         if (emailEl) validarCampoTexto({ target: emailEl }); 
         else camposValidos.email = false
+        //campo correo
 
         const telefonoEl = document.getElementById("telefono")
         if (telefonoEl) validarCampoTexto({ target: telefonoEl })
              else camposValidos.telefono = false;
+            //campo teléfono
 
-        validarSelect()
-        validarRadios()
-        validarTextarea()
-        validarCheckbox()
-        validarCheckboxes()
+            validarSelect()
+            validarRadios()
+            validarTextarea()
+            validarCheckbox()
+            validarCheckboxes()
+        //llamamos el resto de los campos para introducir datos
 
         if (camposValidos.nombre && camposValidos.email && camposValidos.telefono && 
             camposValidos.poblacion && camposValidos.operacion && 
             camposValidos.mensaje && camposValidos.privacidad && camposValidos.origen) {
+                //valida el conjunto de todos lo elementos al mismo tiempo
             
             let exito = "¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto."
             if (idiomaActual === "en") exito = "Form successfully sent! We will contact you soon."
@@ -455,6 +483,7 @@ if (formulario) {
             
             alert(exito)
             formulario.reset()
+            //nos pone una alerta de éxito y resetea el formulario para la próxima vez
             
             for (let clave in camposValidos) {
                 camposValidos[clave] = false
@@ -463,6 +492,7 @@ if (formulario) {
             let fallo = "Por favor, corrige los errores en rojo antes de enviar."
             if (idiomaActual === "en") fallo = "Please correct the red errors before submitting."
             if (idiomaActual === "de") fallo = "Bitte korrigieren Sie die roten Fehler vor dem Absenden."
+            //si hay un campo que no se cumpla, definimos una alerta fallo que nos da un mensaje de error
             
             alert(fallo)
         }

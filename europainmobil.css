@@ -249,29 +249,35 @@ body {
 
 .cuadro-texto {
     width: 320px;
-    padding: 30px;
+    padding: 36px;
     display: none;
     border-left: 1px solid #e2e8f0;
+    min-height: 140px;
+    box-sizing: border-box;
 }
 
+/* Default text box visible on load */
 #texto-default {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
-#img1:target ~ #texto1,
+/* When a thumbnail is targeted, show its matching text box with consistent spacing */
+#img1:target ~ #texto-default,
 #img2:target ~ #texto2,
 #img3:target ~ #texto3,
 #img4:target ~ #texto4,
-#img5:target ~ #texto5 {
+#img5:target ~ #texto5,
+#img6:target ~ #texto6,
+#img7:target ~ #texto7,
+#img8:target ~ #texto8 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
-.contenedor-principal:has(.imagen-grande:target) #mostrar,
-.contenedor-principal:has(.imagen-grande:target) #texto-default {
+.contenedor-principal:has(.imagen-grande:target) #mostrar {
     display: none;
 }
 
@@ -286,6 +292,28 @@ body {
     line-height: 1.6;
     color: #4a5568;
     margin: 0;
+}
+
+
+.cuadro-texto > * {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.cuadro-texto h2 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.cuadro-texto .boton-mapa {
+    display: inline-block;
+    margin: 0 0 6px 0 
+}
+
+.cuadro-texto > div {
+    
+    margin: 0 0 8px 0;
+    font-weight: 600;
 }
 
 .boton-mapa {

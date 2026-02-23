@@ -9,7 +9,7 @@
 
 
 
-# Funciones
+# Función con intervalos
 - En cada página en la cabecera se ha añadido una función timeout con 3 mensajes que van rotando y al hacer clic se pausa (una función con intervalos que se puede cancelar)
 
 
