@@ -1,25 +1,21 @@
 // evento date que añade la fecha,día y hora actualizando cada minuto
 function actualizarFechaYHora() {
-    const fechaActual = new Date()
-    const opciones = {
-        year: 'numeric',
-        month: '2-digit', 
-        day: '2-digit',   
-        hour: '2-digit',  
-        minute: '2-digit', 
-        hour12: false     
-        //año, mes, etc que usan 2 digitos cada uno y usa el reloj de 24 horas
-    };
-    const fechaFormateada = fechaActual.toLocaleString('es-ES', opciones)
-    const [fecha, hora] = fechaFormateada.split(', ');
-    const dateTimeElement = document.getElementById('dateTime')
-    if (dateTimeElement) {
-        dateTimeElement.innerText = `${fecha} ${hora.split(':')[0]}:${hora.split(':')[1]}`
-    }
+    const ahora = new Date();
+    const dia = String(ahora.getDate()).padStart(2, '0');
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const año = ahora.getFullYear();
+    const hora = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    //usa get + el elemento para mostrar y concatena todo en innerText
+    //padStart pone que siempre tenga dos dígitos para tener un formato consistente
+    const elemento = document.getElementById('dateTime');
+    if (elemento) {
+        elemento.innerText = `${dia}/${mes}/${año} ${hora}:${minutos}`
+     }
 }
 
 actualizarFechaYHora()
-
+//actualiza cada minuto
 
 
 
@@ -32,7 +28,6 @@ document.addEventListener('keydown', function(event) {
         link.click()
             }
 })
-
 
 
 // Objeto screen que saca información sobre el browser, pantalla etc en la consola
@@ -50,40 +45,54 @@ if (!nombre) {
     nombre = prompt("¿Cuál es tu nombre?")
     if (nombre) {
         sessionStorage.setItem("nombre", nombre)
-    }
+    } //sessionStorage para que no aparezca cada vez que cambiamos entre htmls - tuvimos que buscar eso
 }
 
 if (nombre) {
-    const nombreMayuscula = nombre.toUpperCase()
+    const nombreMayusculas = nombre.toUpperCase()
     const longitud = nombre.length
     const primerCaracter = nombre.charAt(0)
 
     console.log(`Nombre: ${nombre}`)
-    console.log(`Nombre en mayúscula: ${nombreMayuscula}`)
+    console.log(`Nombre en mayúscula: ${nombreMayusculas}`)
     console.log(`Longitud: ${longitud}`)
     console.log(`Primer carácter (índice 0): ${primerCaracter}`)
 }
+//jugamos con el objeto string, poniendo todo en mayúsculas, midiendo el longitud y usando un índice para sacar el primer carácter
+
+
 
 // evento mouseout que al salir de una tarjeta de equipo saca una alerta 
 document.addEventListener('DOMContentLoaded', function() {
-const aaronCard = document.getElementById("aaron-card")
-if (aaronCard) aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!")
+    const aaronCard = document.getElementById("aaron-card");
+    if (aaronCard) {
+        aaronCard.onmouseout = () => alert("¡Gracias por ver a Aaron!")
+     }
+ //insertamos un mouseout en las 4 primeras tarjetas con mensajes diferentes
+    const alexCard = document.getElementById("alex-card")
+    if (alexCard) {
+        alexCard.onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!")
+    }
 
-const alexCard = document.getElementById("alex-card")
-if (alexCard) alexCard.onmouseout = () => alert("¡Alex siempre busca lo mejor para ti!")
-const alexisCard = document.getElementById("alexis-card");
-if (alexisCard) alexisCard.onmouseout = () => alert("¡Alexis te cuida legalmente!")
+    const alexisCard = document.getElementById("alexis-card")
+    if (alexisCard) {
+        alexisCard.onmouseout = () => alert("¡Alexis te cuida legalmente!")
+    }
 
-const leandroCard = document.getElementById("leandro-card")
-if (leandroCard) leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!")
+    const leandroCard = document.getElementById("leandro-card");
+    if (leandroCard) 
+        leandroCard.onmouseout = () => alert("¡Leandro da vida a cada propiedad!")
+     }
+)
 
 
 
 // botón para cambiar colores de fondo y títulos (usando dom para cambiar elementos css)
 let cambioColores = false
-const changeButton = document.getElementById('cambiar-colores')
-if (changeButton) {
-    changeButton.addEventListener('click', function() {
+const botonCambiar = document.getElementById('cambiar-colores')
+//conectamos el botón con el evento
+if (botonCambiar) {
+    botonCambiar.addEventListener('click', function() {
         if (!cambioColores) {
             document.body.style.backgroundColor = 'lightblue'
             const titles = document.querySelectorAll('h1, h2, h3')
@@ -94,24 +103,21 @@ if (changeButton) {
             const titles = document.querySelectorAll('h1, h2, h3')
             titles.forEach(title => title.style.color = '')
             cambioColores = false
+            //seleccionamos los títulos con h1,2,y 3 y cambiamos el fondo también
         }
     })
 }
-
 
 
 // evento math que saca el precio de la casa más cara en USD en propiedades.html
 const nombrePagina = window.location.pathname.split('/').pop()
 if (nombrePagina === 'propiedades.html') {
     const precioMaximoEUR = 10900000
-    const precioMaximoUSD = Math.round(precioMaximoEUR * 1.08 * 100) / 100;
-    const precioFormateadoUSD = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2
-    }).format(precioMaximoUSD)
-    alert(`El precio de la casa más cara en USD es: ${precioFormateadoUSD}`);
+    const precioMaximoUSD = Math.round(precioMaximoEUR * 1.08 * 100) / 100
+    //formula que usa la tasa de cambio para convertir a USD
+    alert(`El precio de la casa más cara en USD es: $${precioMaximoUSD}`)
 }
+
 
 
 
@@ -119,6 +125,7 @@ if (nombrePagina === 'propiedades.html') {
 const idiomaActual = document.documentElement.lang || "es"
 
 const selectorIdioma = document.getElementById("botonidiomas")
+//funcion de botón para reconocer si cambiamos el idioma
 if (selectorIdioma) {
     selectorIdioma.addEventListener("change", function() {
         let idiomaElegido = this.value;
@@ -126,9 +133,11 @@ if (selectorIdioma) {
         
         if (paginaActual === "" || paginaActual === "/") {
             paginaActual = "index.html"
+            //saca el index original en español
         }
 
         let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html")
+        //si no, reemplazamos con las otras 2 páginas en inglés y alemán
         if (idiomaElegido === "es") {
             window.location.href = paginaBase
         } else {
@@ -141,24 +150,22 @@ if (selectorIdioma) {
 
 // galeria de casas en propediades.html
 const enlacesGaleria = document.querySelectorAll('.miniaturas a')
+//enlaces para hacer clic en las fotos
 if (enlacesGaleria.length > 0) {
     enlacesGaleria.forEach(enlace => {
         enlace.addEventListener('click', function(e) {
             e.preventDefault()
-            
             const todasLasImagenes = document.querySelectorAll('.imagen-grande')
             const todosLosTextos = document.querySelectorAll('.cuadro-texto')
-        
             todasLasImagenes.forEach(img => img.style.display = 'none')
             todosLosTextos.forEach(txt => txt.style.display = 'none')
-            
             const idDestino = this.getAttribute('href')
             const imagenAMostrar = document.querySelector(idDestino)
             const numeroTexto = idDestino.replace('#img', '')
             const textoAMostrar = document.getElementById('texto' + numeroTexto)
-            
             if (imagenAMostrar) imagenAMostrar.style.display = 'block'
             if (textoAMostrar) textoAMostrar.style.display = 'block'
+            //tiene que esconder todas las imágenes primero y luego muestra solo la sobre la que hemos hecho clic
         })
     })
 }
@@ -169,63 +176,66 @@ if (enlacesGaleria.length > 0) {
 setTimeout(() => {
     if (!sessionStorage.getItem("bienvenida")) {
         let mensaje = "¡Bienvenido a Europa Inmobiliaria! Estamos aquí para ayudarte a encontrar tu hogar."
-        if (idiomaActual === "en") mensaje = "Welcome to Europa Inmobiliaria! We are here to help you find your home."
-        if (idiomaActual === "de") mensaje = "Willkommen bei Europa Inmobiliaria! Wir sind hier, um Ihnen zu helfen, Ihr Zuhause zu finden."
-        
-        alert(mensaje)
-        sessionStorage.setItem("bienvenida", "true")
+            if (idiomaActual === "en") mensaje = "Welcome to Europa Inmobiliaria! We are here to help you find your home."
+            if (idiomaActual === "de") mensaje = "Willkommen bei Europa Inmobiliaria! Wir sind hier, um Ihnen zu helfen, Ihr Zuhause zu finden."
+            //llamamos el estado del botón de idioma
+            alert(mensaje)
+            sessionStorage.setItem("bienvenida", "true")
     }
 }, 2000)
+// se muestra el mensaje por 2 segundos
 
 
 
 // función a intervalos que se puede parar al hacer clic
-const slogan = document.getElementById("slogan")
-if (slogan) {
+const eslogan = document.getElementById("eslogan")
+if (eslogan) {
     const esloganes = {
         es: ["¡Vive del estilo europeo!", "Encuentra tu hogar ideal", "Inversiones seguras", "Expertos a tu lado"],
         en: ["Live the European style!", "Find your ideal home", "Safe investments", "Experts by your side"],
         de: ["Erleben Sie den europäischen Stil!", "Finden Sie Ihr ideales Zuhause", "Sichere Investitionen", "Experten an Ihrer Seite"]
+        //en cada idioma una lista de los esloganes que van rotando
     }
 
+    //
     const frases = esloganes[idiomaActual]
     let indiceSlogan = 0
     
     const intervaloEslogan = setInterval(() => {
         indiceSlogan++
         if (indiceSlogan >= frases.length) indiceSlogan = 0
-        slogan.textContent = frases[indiceSlogan]
+        eslogan.textContent = frases[indiceSlogan]
     }, 3000)
+    //intervalo de 3 segundos
 
-    slogan.addEventListener("click", () => {
+    eslogan.addEventListener("click", () => {
         clearInterval(intervaloEslogan)
         
-        if (idiomaActual === "en") slogan.textContent = "Live the European style! (Animation paused)"
-        else if (idiomaActual === "de") slogan.textContent = "Erleben Sie den europäischen Stil! (Animation pausiert)"
-        else slogan.textContent = "¡Vive del estilo europeo! (Animación pausada)"
+        if (idiomaActual === "en") eslogan.textContent = "Live the European style! (Animation paused)"
+        else if (idiomaActual === "de") eslogan.textContent = "Erleben Sie den europäischen Stil! (Animation pausiert)"
+        else eslogan.textContent = "¡Vive del estilo europeo! (Animación pausada)"
         
-        slogan.style.color = "#396c95"
-        slogan.style.cursor = "default"
+        eslogan.style.color = "#396c95"
+        eslogan.style.cursor = "default"
     })
     
-    slogan.style.cursor = "pointer"
+    eslogan.style.cursor = "pointer"
     
-    if (idiomaActual === "en") slogan.title = "Click to pause animation"
-    else if (idiomaActual === "de") slogan.title = "Klicken, um die Animation anzuhalten"
-    else slogan.title = "Haz clic para pausar la animación"
 }
 
 
 
 // validación del formulario que usa expresiónes regex para comprobar tanto el estado de cada caja individualmente como enviar el formulario si todo no está correcto
 const formulario = document.getElementById("formulario-contacto")
+//llamamos el formulario
 
 if (formulario) {
     const expresiones = {
         nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         telefono: /^\d{9}$/
-    };
+        //expresiones regulares que validan los campos
+    }
 
     const camposValidos = {
         nombre: false, 
@@ -236,7 +246,7 @@ if (formulario) {
         mensaje: false, 
         privacidad: false,
         origen: false
-    };
+    }
     
     const mostrarError = (idInput, mensaje) => {
         const input = document.getElementById(idInput)
@@ -384,11 +394,11 @@ if (formulario) {
                 contenedorCheckboxes.appendChild(msgSpan)
             }
             camposValidos.origen = false
-        } else {
+        } else  {
             if (errorPrevio) errorPrevio.remove()
             camposValidos.origen = true
         }
-    };
+    }
     
     const inputNombre = document.getElementById("nombre")
     if (inputNombre) inputNombre.addEventListener("blur", validarCampoTexto)
@@ -419,7 +429,7 @@ if (formulario) {
 
         const nombreEl = document.getElementById("nombre")
         if (nombreEl) validarCampoTexto({ target: nombreEl })
-             else camposValidos.nombre = false;
+             else camposValidos.nombre = false
 
         const emailEl = document.getElementById("email")
         if (emailEl) validarCampoTexto({ target: emailEl }); 
@@ -459,4 +469,3 @@ if (formulario) {
     })
     }
 
-})
