@@ -45,4 +45,5 @@
 # Formulario y validación
 - Implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 
+- Añadido un campo checkbox de "cómo has oído de nosotros" que integra un la validación general del formulario
 
