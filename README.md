@@ -25,7 +25,7 @@
 - Un evento onmouseout que al salir de las tarjetas de los miembros del equipo pone una alerta
 
 
-#Objetos
+# Objetos
 - Objeto string al cargar la página - pide el nombre y guarda el nombre en mayúsculas, la longitud, y el primer carácter usando índice
 
 - Objeto math - da una alerta que calcula el precio de la casa más cara (calle del camino alto) en USD usando la conversión 1.08
@@ -41,6 +41,7 @@
 
 - Alerta al entrar la página con un mensaje de bienvenida
 
+- Un sistema modal para abrir una ventana dentro de una tarjeta flex
 
 # Formulario y validación
 - Implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
