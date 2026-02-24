@@ -16,8 +16,6 @@
 # Eventos
 - Definimos en los documentos legales un evento onclick con diferentes resultados en cada uno. El primer documento se abre en una nueva pestaña. El segundo se abre con una ventana de tamaño diferente
 
-- Un evento mouseover que saca una alerta cada vez que se ponga el ratón sobre el tercer documento
-
 - Un evento keydown que al pulsar cntrl + / en el teclado se abre el tercer documento
 
 - Un evento onload que saca el idioma y tamaño de la pantalla en la consola
