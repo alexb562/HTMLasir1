@@ -1,4 +1,4 @@
-// evento date que añade la fecha,día y hora actualizando cada minuto
+// objeto date que añade la fecha,día y hora actualizando cada minuto
 function actualizarFechaYHora() {
     const ahora = new Date();
     const dia = String(ahora.getDate()).padStart(2, '0');
@@ -30,7 +30,7 @@ document.addEventListener('keydown', function(event) {
 })
 
 
-// Objeto screen que saca información sobre el browser, pantalla etc en la consola
+// Objeto screen y navigador que saca información sobre el browser, pantalla etc en la consola
 const idioma = navigator.language
 const pantalla = `${screen.width}x${screen.height}`
 const appName = navigator.appName
