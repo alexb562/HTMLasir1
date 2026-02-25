@@ -18,7 +18,6 @@ actualizarFechaYHora()
 
 
 
-
 // evento keydown que al pulsar ctrl y / se descarga el tercer documento en index.html
 document.addEventListener('keydown', function(event) {
     if (event.key === '/' && event.ctrlKey) {
