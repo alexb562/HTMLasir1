@@ -169,19 +169,40 @@ const selectorIdioma = document.getElementById("botonidiomas")
 if (selectorIdioma) {
     selectorIdioma.addEventListener("change", function() {
         let idiomaElegido = this.value;
-        let paginaActual = window.location.pathname.split("/").pop()
         
-        if (paginaActual === "" || paginaActual === "/") {
-            paginaActual = "index.html"
-            //saca el index original en español
+        // Get the full path and break it down
+        let pathParts = window.location.pathname.split("/");
+        let paginaActual = pathParts.pop() || "index.html";
+        
+        // Determine current folder (index/, en/, de/)
+        let currentFolder = "";
+        if (pathParts.length > 0 && pathParts[pathParts.length - 1] !== "") {
+            currentFolder = pathParts.pop() + "/";
         }
-
-        let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html")
-        //si no, reemplazamos con las otras 2 páginas en inglés y alemán
+        
+        // If we're at root, use index folder
+        if (currentFolder === "") {
+            currentFolder = "index/";
+        }
+        
+        // Remove language suffix to get base page name
+        let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
+        
+        // Determine target folder based on selected language
+        let targetFolder = "";
         if (idiomaElegido === "es") {
-            window.location.href = paginaBase
+            targetFolder = "index/";
+        } else if (idiomaElegido === "en") {
+            targetFolder = "en/";
+        } else if (idiomaElegido === "de") {
+            targetFolder = "de/";
+        }
+        
+        // Build the new URL
+        if (idiomaElegido === "es") {
+            window.location.href = "../" + targetFolder + paginaBase;
         } else {
-            window.location.href = paginaBase.replace(".html", "-" + idiomaElegido + ".html")
+            window.location.href = "../" + targetFolder + paginaBase.replace(".html", "-" + idiomaElegido + ".html");
         }
     });
 }

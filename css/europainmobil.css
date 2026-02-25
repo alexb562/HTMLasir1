@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background-image: url('fondo.jpg');
+    background-image: url('../fotos/fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
