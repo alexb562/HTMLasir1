@@ -41,6 +41,8 @@
 
 - Un sistema modal para abrir una ventana dentro de una tarjeta flex
 
+- 3 menus desplegables con subopciones usando un contenedor flexbox
+
 # Formulario y validación
 - Implementado comprobacion de campos que se ponen en rojo con un mensaje de error. Al enviar un formulario que sea menos de 10 caracteres o vacio se da un error
 

@@ -502,3 +502,74 @@ button[type="submit"]:hover { background: var(--color-secundario); }
     .cabecera { height: 140px; }
     .contenido-principal { padding-top: 150px; }
 }
+
+
+
+/* Menus desplegables */
+
+/* Contenedor flexbox para todo */
+.contenedor-menus {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0 50px 0;
+}
+
+/* Contenedor del menu desplegable */
+.menu-desp {
+  position: relative;
+  display: inline-block;
+}
+
+/* Boton desplegable */
+.menu-desp-boton {
+  color: #0A2836;
+  padding: 4px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* Color de boton al hacer hover y focus */
+.menu-desp-boton:hover, .menu-desp-boton:focus {
+  background-color: #2980B9;
+}
+
+/* Contenido (escondido por defecto) */
+.dropdown-contenido {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  /*contenido centrado relativo al boton*/
+  left: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease, visibility 0.3s ease;
+  
+}
+
+/* Enlaces dentro*/
+.dropdown-contenido a {
+  color: black;
+  padding: 10;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cambiar color de enlaces al hover */
+.dropdown-contenido a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px;
+}

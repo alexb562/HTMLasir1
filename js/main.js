@@ -1,3 +1,27 @@
+//Funciones para los menus desplegables
+
+// Al hacer clic sobre el boton 
+function desplegarMenu(dropdownId) {
+  document.getElementById(dropdownId).classList.toggle("show");
+}
+
+// Cierra el menu si el usuario se hace clic afuera
+window.onclick = function(event) {
+  if (!event.target.matches('.menu-desp-boton')) {
+    var dropdowns = document.getElementsByClassName("dropdown-contenido");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
 // objeto date que añade la fecha,día y hora actualizando cada minuto
 function actualizarFechaYHora() {
     const ahora = new Date()
@@ -18,6 +42,7 @@ actualizarFechaYHora()
 
 
 
+
 // evento keydown que al pulsar ctrl y / se descarga el tercer documento en index.html
 document.addEventListener('keydown', function(event) {
     if (event.key === '/' && event.ctrlKey) {
@@ -27,6 +52,8 @@ document.addEventListener('keydown', function(event) {
         link.click()
             }
 })
+
+
 
 
 // Objeto screen y navigador que saca información sobre el browser, pantalla etc en la consola
@@ -58,6 +85,8 @@ if (nombre) {
     console.log(`Primer carácter (índice 0): ${primerCaracter}`)
 }
 //jugamos con el objeto string, poniendo todo en mayúsculas, midiendo el longitud y usando un índice para sacar el primer carácter
+
+
 
 
 
