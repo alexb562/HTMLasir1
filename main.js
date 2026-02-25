@@ -1,14 +1,14 @@
 // objeto date que añade la fecha,día y hora actualizando cada minuto
 function actualizarFechaYHora() {
-    const ahora = new Date();
-    const dia = String(ahora.getDate()).padStart(2, '0');
-    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
-    const año = ahora.getFullYear();
-    const hora = String(ahora.getHours()).padStart(2, '0');
-    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const ahora = new Date()
+    const dia = String(ahora.getDate()).padStart(2, '0')
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0')
+    const año = ahora.getFullYear()
+    const hora = String(ahora.getHours()).padStart(2, '0')
+    const minutos = String(ahora.getMinutes()).padStart(2, '0')
     //usa get + el elemento para mostrar y concatena todo en innerText
     //padStart pone que siempre tenga dos dígitos para tener un formato consistente
-    const elemento = document.getElementById('dateTime');
+    const elemento = document.getElementById('dateTime')
     if (elemento) {
         elemento.innerText = `${dia}/${mes}/${año} ${hora}:${minutos}`
      }
