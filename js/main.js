@@ -62,18 +62,15 @@ const pantalla = `${screen.width}x${screen.height}`
 const appName = navigator.appName
 const appVersion = navigator.appVersion
 const platform = navigator.platform
-
 console.log(`Info del browser: Idioma = ${idioma}, Pantalla = ${pantalla}, Nombre de la aplicación = ${appName}, Versión de la aplicación = ${appVersion}, Plataforma = ${platform}`)
 
 let nombre = sessionStorage.getItem("nombre");
-
 if (!nombre) {
     nombre = prompt("¿Cuál es tu nombre?")
     if (nombre) {
         sessionStorage.setItem("nombre", nombre)
     } //sessionStorage para que no aparezca cada vez que cambiamos entre htmls - tuvimos que buscar eso
 }
-
 if (nombre) {
     const nombreMayusculas = nombre.toUpperCase()
     const longitud = nombre.length
@@ -112,10 +109,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    //Creando las tarjetas interactivas de propiedades 
-    const botonesDetalles = document.querySelectorAll('.btn-detalles')
-    const modal = document.getElementById('modal-propiedad')
-    const btnCerrar = document.querySelector('.cerrar-modal')
+//Creando las tarjetas interactivas de propiedades 
+const botonesDetalles = document.querySelectorAll('.btn-detalles')
+const modal = document.getElementById('modal-propiedad')
+const btnCerrar = document.querySelector('.cerrar-modal')
     //seleccionamos un tipo de array de botones para abrir la ventana de detalles
     
     if (botonesDetalles.length > 0 && modal)  {
@@ -178,13 +175,17 @@ if (botonCambiar) {
 }
 
 
+
 // evento math que saca el precio de la casa más cara en USD en propiedades.html
 const nombrePagina = window.location.pathname.split('/').pop()
 if (nombrePagina === 'propiedades.html') {
     const precioMaximoEUR = 10900000
     const precioMaximoUSD = Math.round(precioMaximoEUR * 1.08 * 100) / 100
+    const precioMaximoLibra = Math.round(precioMaximoEUR * 0.875 * 100) / 100
     //formula que usa la tasa de cambio para convertir a USD
-    alert(`El precio de la casa más cara en USD es: $${precioMaximoUSD}`)
+    alert(`El precio de la casa más cara en EUR es: $${precioMaximoEUR}
+    El precio de la casa más cara en GBP es: $${precioMaximoLibra} `
+    )
 }
 
 
@@ -192,14 +193,13 @@ if (nombrePagina === 'propiedades.html') {
 
 // combinación de ifs que cambia el idioma de la página cuando se seleccione un idioma
 const idiomaActual = document.documentElement.lang || "es"
-
 const selectorIdioma = document.getElementById("botonidiomas")
 //funcion de botón para reconocer si cambiamos el idioma
 if (selectorIdioma) {
     selectorIdioma.addEventListener("change", function() {
         let idiomaElegido = this.value;
         
-        // Get the full path and break it down
+        // Corta la ruta donde los archivos son diferentes
         let pathParts = window.location.pathname.split("/");
         let paginaActual = pathParts.pop() || "index.html";
         
@@ -214,10 +214,10 @@ if (selectorIdioma) {
             currentFolder = "index/";
         }
         
-        // Remove language suffix to get base page name
+        // Para ir al index
         let paginaBase = paginaActual.replace("-en.html", ".html").replace("-de.html", ".html");
         
-        // Determine target folder based on selected language
+        
         let targetFolder = "";
         if (idiomaElegido === "es") {
             targetFolder = "index/";
@@ -226,8 +226,7 @@ if (selectorIdioma) {
         } else if (idiomaElegido === "de") {
             targetFolder = "de/";
         }
-        
-        // Build the new URL
+        // Construir nueva ruta 
         if (idiomaElegido === "es") {
             window.location.href = "../" + targetFolder + paginaBase;
         } else {
